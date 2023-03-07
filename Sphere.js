@@ -6,4 +6,10 @@ const material = new THREE.MeshStandardMaterial({
     map: new THREE.TextureLoader().load('earth.jpg')
 })
 
-export const mesh = new THREE.Mesh(geometry,material)
+const mesh = new THREE.Mesh(geometry,material)
+mesh.rotateY += 1.5
+const rotateEarth = () => {
+    mesh.rotation.y += 0.005
+}
+
+export {mesh,rotateEarth}

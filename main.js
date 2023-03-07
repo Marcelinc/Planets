@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import {mesh} from './Sphere'
+import {mesh, rotateEarth} from './Sphere'
 import { stars } from './Stars'
 import { moonMesh } from './Moon'
 import './style.css'
@@ -32,6 +32,7 @@ const camera = new THREE.PerspectiveCamera(
   1000
 )
 camera.position.z = 20
+camera.lookAt(moonMesh.position)
 scene.add(camera)
 
 
@@ -68,6 +69,7 @@ const loop = () => {
   controls.update()
   renderer.render(scene,camera)
   window.requestAnimationFrame(loop)
+  rotateEarth()
 }
 loop()
 
@@ -76,12 +78,21 @@ loop()
 const t1 = gsap.timeline({defaults: {duration: 1}})
 t1.fromTo(mesh.scale,{z:0,x:0,y:0},{z:1,x:1,y:1})
 
-//Timeline - move camera to Moon
-/*const t2 = gsap.timeline({defaults: {duration: 1}})
 
+//move camera to Moon
 const next = document.querySelector('#next')
+const celestial = document.querySelector('.celestialBody')
 if(next){
   next.addEventListener('click',() => {
-    t2.fromTo(camera.translateZ,{x:0,y:0,z:20},{x:0,y:0,z:-80})
+    celestial.innerHTML = 'Moon'
+    gsap.to(camera.position,{
+      duration: 3,
+      x: moonMesh.position.x,
+      y: moonMesh.position.y,
+      z: moonMesh.position.z+10,
+      onUpdate: () => {
+        controls.target = new THREE.Vector3(moonMesh.position.x,moonMesh.position.y,moonMesh.position.z)
+      }
+    })    
   })
-}*/
+}

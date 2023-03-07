@@ -30,6 +30,6 @@ nav ul{
   gap: 40px;
   font-weight: 700;
 }
-.link:hover, .planetName:hover{
+.link:hover, .celestialBody:hover{
   cursor: pointer;
 }
