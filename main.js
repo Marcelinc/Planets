@@ -49,7 +49,7 @@ const controls = new OrbitControls(camera,canvas)
 controls.enableDamping = true
 controls.enablePan = false
 //controls.enableZoom = false
-controls.autoRotate = true
+//controls.autoRotate = true
 controls.autoRotateSpeed = 3
 
 
@@ -89,7 +89,7 @@ if(next){
       duration: 3,
       x: moonMesh.position.x,
       y: moonMesh.position.y,
-      z: moonMesh.position.z+10,
+      //z: moonMesh.position.z+10,
       onUpdate: () => {
         controls.target = new THREE.Vector3(moonMesh.position.x,moonMesh.position.y,moonMesh.position.z)
       }
