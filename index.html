@@ -4,17 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Planets</title>
   </head>
   <body>
     <canvas class="content"></canvas>
     <nav>
       <span class="celestialBody">Earth</span>
       <ul>
-        <li class="link">Explore</li>
+        <li class="link" id="explore">Explore</li>
         <li class="link" id="next">Next</li>
       </ul>
     </nav>
+    <div id="description-container"></div>
     <script type="module" src="/main.js"></script>
+    <script src="/showDescription.js"></script>
   </body>
 </html>
