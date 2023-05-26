@@ -33,3 +33,8 @@ nav ul{
 .link:hover, .celestialBody:hover{
   cursor: pointer;
 }
+
+/*Description*/
+.description{
+  background-color: aliceblue;
+}

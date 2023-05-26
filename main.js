@@ -5,12 +5,16 @@ import { moonMesh } from './Moon'
 import './style.css'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import gsap from 'gsap'
+import { marsMesh, rotateMars } from './Mars'
+import { jupiterMesh, rotateJupiter } from './Jupiter'
 
 //Scene
 const scene = new THREE.Scene()
 scene.add(mesh)
 scene.add(stars)
 scene.add(moonMesh)
+scene.add(marsMesh)
+scene.add(jupiterMesh)
 
 
 //Light
@@ -49,7 +53,7 @@ const controls = new OrbitControls(camera,canvas)
 controls.enableDamping = true
 controls.enablePan = false
 //controls.enableZoom = false
-controls.autoRotate = true
+controls.autoRotate = false
 controls.autoRotateSpeed = 3
 
 
@@ -70,9 +74,15 @@ const loop = () => {
   renderer.render(scene,camera)
   window.requestAnimationFrame(loop)
   rotateEarth()
+  rotateMars()
+  rotateJupiter()
 }
 loop()
 
+//Page handling//
+
+const objects = ['Earth','Moon', 'Mars','Jupiter']
+var current = objects.indexOf('Earth')
 
 //Timeline - scale Earth
 const t1 = gsap.timeline({defaults: {duration: 1}})
@@ -84,14 +94,30 @@ const next = document.querySelector('#next')
 const celestial = document.querySelector('.celestialBody')
 if(next){
   next.addEventListener('click',() => {
-    celestial.innerHTML = 'Moon'
+    //change text
+    if(current != objects.length-1){
+      current +=1 
+    } else{
+      current = 0
+    }
+    celestial.innerHTML = objects[current]
+
+
+    //change camera position
     gsap.to(camera.position,{
       duration: 3,
       x: moonMesh.position.x,
       y: moonMesh.position.y,
       z: moonMesh.position.z+10,
       onUpdate: () => {
-        controls.target = new THREE.Vector3(moonMesh.position.x,moonMesh.position.y,moonMesh.position.z)
+        if(objects[current] === 'Earth')
+          controls.target = new THREE.Vector3(mesh.position.x,mesh.position.y,mesh.position.z)
+        else if(objects[current] === 'Moon')
+          controls.target = new THREE.Vector3(moonMesh.position.x,moonMesh.position.y,moonMesh.position.z)
+        else if(objects[current] === 'Mars')
+          controls.target = new THREE.Vector3(marsMesh.position.x,marsMesh.position.y,marsMesh.position.z)
+        else if(objects[current] === 'Jupiter')
+          controls.target = new THREE.Vector3(jupiterMesh.position.x,jupiterMesh.position.y,jupiterMesh.position.z)
       }
     })    
   })
