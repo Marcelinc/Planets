@@ -9,5 +9,5 @@
 <!-- MARKDOWN LINKS & IMAGES -->
 [JavaScript.img]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [JavaScript-url]: #
-[Three.img]: #
+[Three.img]: https://img.shields.io/badge/ThreeJs-black?style=for-the-badge&logo=three.js&logoColor=white
 [Three-url]: https://threejs.org/
