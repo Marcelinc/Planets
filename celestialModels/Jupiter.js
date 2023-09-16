@@ -7,11 +7,11 @@ const material = new THREE.MeshBasicMaterial({
 })
 
 const jupiterMesh = new THREE.Mesh(geometry,material)
-jupiterMesh.position.x = 150
+jupiterMesh.position.x = 950
 jupiterMesh.position.y = 20
 
 const rotateJupiter = () => {
-    jupiterMesh.rotation.y += 0.005
+    jupiterMesh.rotation.y += 0.010
 }
 
 export {jupiterMesh,rotateJupiter}

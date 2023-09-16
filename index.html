@@ -5,6 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planets</title>
+    
   </head>
   <body>
     <canvas class="content"></canvas>
@@ -15,8 +16,17 @@
         <li class="link" id="next">Next</li>
       </ul>
     </nav>
-    <div id="description-container"></div>
+    <div id="description-container">
+      <div id='description'>
+        <h2 class="desc" id="celestialName"></h2>
+        <p class='desc' id="celestialType">Typ planety: </p>
+        <p class='desc' id="celestialCircumference">Obwód: </p>
+        <p class='desc' id="celestialDensity">Gęstość: </p>
+        <p class='desc' id="celestialRotationPeriod">Okres obrotu: </p>
+        <p class='desc' id="celestialAxisInclination">Nachylenie osi: </p>
+        <p class='desc' id="celestialNaturalSatellites">Naturalne satelity: </p>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
-    <script src="/showDescription.js"></script>
   </body>
 </html>
