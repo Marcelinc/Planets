@@ -6,7 +6,7 @@ const material = new THREE.MeshStandardMaterial({
 })
 
 const marsMesh = new THREE.Mesh(geometry,material)
-marsMesh.position.x = 80
+marsMesh.position.x = 320
 marsMesh.position.y = 10
 
 
