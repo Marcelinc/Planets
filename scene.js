@@ -73,8 +73,10 @@ export const initScene = () => {
     })
 
     //Timeline - scale Earth
-    const t1 = gsap.timeline({defaults: {duration: 1}})
-    t1.fromTo(mesh.scale,{z:0,x:0,y:0},{z:1,x:1,y:1})
+    const t1 = gsap.timeline({defaults: {duration: 1}});
+    t1.fromTo(mesh.scale,{z:0,x:0,y:0},{z:1,x:1,y:1});
+    const t2 = gsap.timeline({defaults: {duration: 1}});
+    t2.fromTo(moonMesh.scale,{z:0,x:0,y:0},{z:1,x:1,y:1});
 
     //create description
     createDescription(currentCelestial)

@@ -18,7 +18,7 @@ nav{
   z-index: 2;
   position: relative;
   display: flex;
-  padding: 4rem 8rem;
+  padding: 4rem;
   justify-content: space-between;
 }
 nav span{
@@ -30,19 +30,30 @@ nav ul{
   gap: 40px;
   font-weight: 700;
 }
-.link:hover, .celestialBody:hover{
+.celestialBody{
+  font-weight: 900;
+}
+.link:hover{
   cursor: pointer;
+  color: rgb(58, 58, 201);
+}
+.celestialBody:hover{
+  cursor:default;
 }
 
 /*Description*/
 #description{
-  background-color: aliceblue;
+  background-color: rgba(150, 173, 168, 0.274);
+  color:rgb(255, 255, 255);
   position: absolute;
   z-index: 1;
   padding: 1.5em;
   left: 3em;
   border-radius: 0.5em;
+  border: 2px solid rgba(255, 255, 255, 0.247);
   top: 9em;
   opacity: 0;
   transition: opacity 1s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
 }
