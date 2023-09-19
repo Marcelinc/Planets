@@ -1,7 +1,7 @@
 export const celestialBodies = [{
     id: 1,
     name:'Earth',
-    type: 'skalista',
+    type: 'rocky planet',
     circumference: '40 075km',
     density: '5,51 g/cm³',
     rotationPeriod: '23,9345h',
@@ -10,7 +10,7 @@ export const celestialBodies = [{
 },{
     id: 2,
     name:'Moon',
-    type: 'skalista',
+    type: 'moon',
     circumference: '10 921km',
     density: '3,34 g/cm³',
     rotationPeriod: '27,3 dnia',
@@ -19,7 +19,7 @@ export const celestialBodies = [{
 },{
     id: 3,
     name:'Mars',
-    type: 'skalista',
+    type: 'rocky planet',
     circumference: '21 344km',
     density: '3,93 g/cm³',
     rotationPeriod: '1,025 dnia',
@@ -28,7 +28,7 @@ export const celestialBodies = [{
 },{
     id: 4,
     name:'Jupiter',
-    type: 'gazowa',
+    type: 'gas planet',
     circumference: '439 264km',
     density: '1,33 g/cm³',
     rotationPeriod: '9h 55m',
